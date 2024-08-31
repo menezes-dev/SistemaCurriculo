@@ -31,7 +31,10 @@ const Search = () => {
     try {
       await deleteCurriculum(id);
       setCurriculums(curriculums.filter((curriculum) => curriculum.id !== id)); // Atualiza a lista local
-      toast.success("Currículo deletado com sucesso!");
+      toast.success("Currículo deletado com sucesso!", {
+        style: { backgroundColor: "green", color: "white" },
+        progressStyle: { backgroundColor: "white" }, // Personaliza a barra de progresso
+      });
     } catch (error) {
       toast.error("Ocorreu um erro ao deletar!");
     }
@@ -177,10 +180,6 @@ const Search = () => {
                   </button>
                   <button
                     className="delete"
-                    style={{
-                      backgroundColor: "var(--danger-color)",
-                      color: "white",
-                    }}
                     onClick={() => handleDelete(curriculum.id)}
                   >
                     Excluir
