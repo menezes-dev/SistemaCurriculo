@@ -33,6 +33,7 @@ export const Container = styled.div`
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    margin-left: 20px;
   }
 
   button:focus {
